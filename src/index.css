@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-outline: #a58a8c;
+  --color-on-surface-variant: #ddbfc1;
+  --color-on-error: #690005;
+  --color-on-tertiary: #3c2f00;
+  --color-secondary-fixed: #ffdada;
+  --color-on-tertiary-container: #4f3d00;
+  --color-error-container: #93000a;
+  --color-tertiary: #e9c349;
+  --color-on-surface: #e5e2e1;
+  --color-secondary-fixed-dim: #ffb3b6;
+  --color-on-secondary: #680019;
+  --color-outline-variant: #574143;
+  --color-on-tertiary-fixed-variant: #574500;
+  --color-surface-tint: #ffb2ba;
+  --color-tertiary-fixed: #ffe088;
+  --color-inverse-primary: #a7354a;
+  --color-on-error-container: #ffdad6;
+  --color-on-secondary-fixed-variant: #920028;
+  --color-on-primary-fixed: #400010;
+  --color-surface-bright: #3a3939;
+  --color-surface-container-high: #2a2a2a;
+  --color-on-secondary-container: #ff9da2;
+  --color-primary-fixed-dim: #ffb2ba;
+  --color-secondary-container: #960129;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-on-tertiary-fixed: #241a00;
+  --color-on-background: #e5e2e1;
+  --color-surface-variant: #353534;
+  --color-error: #ffb4ab;
+  --color-tertiary-fixed-dim: #e9c349;
+  --color-inverse-on-surface: #313030;
+  --color-background: #131313;
+  --color-primary-container: #7b112c;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container-highest: #353534;
+  --color-surface-container: #201f1f;
+  --color-on-secondary-fixed: #40000c;
+  --color-on-primary-fixed-variant: #871c34;
+  --color-on-primary-container: #ff8394;
+  --color-surface: #131313;
+  --color-surface-dim: #131313;
+  --color-primary: #ffb2ba;
+  --color-inverse-surface: #e5e2e1;
+  --color-tertiary-container: #cca730;
+  --color-secondary: #ffb3b6;
+  --color-on-primary: #670020;
+  --color-primary-fixed: #ffd9dc;
+
+  /* Custom spacings */
+  --spacing-gutter: 24px;
+  --spacing-unit: 8px;
+  --spacing-margin-mobile: 20px;
+  --spacing-container-max: 1440px;
+  --spacing-margin-desktop: 64px;
+
+  /* Custom radius */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+  
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Desktop Environment & Mobile Device Viewport Frame */
+.desktop-viewport-canvas {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #060607;
+  background-image: 
+    radial-gradient(circle at 50% 25%, rgba(123, 17, 44, 0.18) 0%, rgba(6, 6, 7, 0) 65%),
+    radial-gradient(circle at 50% 85%, rgba(233, 195, 73, 0.08) 0%, rgba(6, 6, 7, 0) 55%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .mobile-device-viewport {
+    width: 390px;
+    height: 844px;
+    border-radius: 32px;
+    background: #111111;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.55);
+    position: relative;
+    transform: translate3d(0, 0, 0);
+    isolation: isolate;
+    flex-shrink: 0;
+  }
+
+  /* Scale down frame smoothly if desktop browser window height is smaller than 880px */
+  @media (max-height: 880px) {
+    .mobile-device-viewport {
+      transform: scale(calc((100vh - 32px) / 844));
+      transform-origin: center center;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-viewport-canvas {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    background: #131313;
+    display: block;
+    overflow: visible;
+  }
+
+  .mobile-device-viewport {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    border-radius: 0 !important;
+    background: #131313 !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    position: relative;
+    transform: none !important;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #060607;
+  color: #e5e2e1;
+  min-height: 100dvh;
+}
+
+
+
+
+/* Typography Class Mapping - Standardized System (8pt Scale) */
+.font-hero,
+.hero-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 42px;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-display-lg,
+.page-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-display-lg-mobile {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-headline-lg,
+.section-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-headline-md,
+.card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.font-body-lg {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.font-body-md,
+.body-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.font-label-md,
+.small-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.font-label-sm,
+.caption-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Custom Visual Utilities & Standard Buttons */
+.btn-primary,
+.btn-standard {
+  height: 52px;
+  border-radius: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  height: 48px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.gold-glow {
+  box-shadow: 0 8px 24px rgba(233, 195, 73, 0.12);
+}
+
+.gold-glow-button {
+  background: linear-gradient(135deg, #e9c349 0%, #cca730 100%);
+  box-shadow: 0 4px 16px rgba(233, 195, 73, 0.2);
+  border-radius: 16px;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+
+.gold-glow-button:hover {
+  box-shadow: 0 6px 20px rgba(233, 195, 73, 0.3);
+}
+
+.maroon-gradient {
+  background: radial-gradient(circle at center, #2a040d 0%, #0d0d0d 100%);
+}
+
+.button-gradient {
+  background: linear-gradient(135deg, #7b112c 0%, #b11f3a 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 4px 14px rgba(123, 17, 44, 0.25);
+  border-radius: 16px;
+}
+
+.ambient-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(123, 17, 44, 0.1) 0%, rgba(123, 17, 44, 0) 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Micro Animations keyframes */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.8s ease-in-out;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.breathing-dot {
+  animation: breathe 2s infinite ease-in-out;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
+
+/* Input floating label styling */
+.input-glow:focus-within {
+  border-color: #e9c349;
+  box-shadow: 0 4px 20px -10px rgba(233, 195, 73, 0.3);
+}
+
+/* Safe Area Paddings */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
